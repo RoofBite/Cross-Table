@@ -1,0 +1,32 @@
+{% extends "CrossTable/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Setup1 {% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    
+    
+    
+    Number of possible answers for root question 
+<form action="" method="POST" id="form1">
+    {% csrf_token %}
+    <input type="number" id="tentacles" name="quesion_0_possible_answers_number"
+       min="1" max="10"/>
+    
+    <br>
+    Number of questions to croos with root question
+    
+    <input type="number" id="tentacles" name="questions_number"
+       min="1" max="10"/>
+
+</form>
+    
+       <button type="submit" form="form1" value="Submit">Submit</button>
+    {% endblock %}
+</body>
+</html>
