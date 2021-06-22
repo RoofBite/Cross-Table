@@ -6,5 +6,9 @@ import CrossTable
 app_name='CrossTable'
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('setup1/<int:quesion_0_possible_answers_number>/<int:questions_number>/',
+    views.setup1,name='setup1'
+    )
+
 ]
