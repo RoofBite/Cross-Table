@@ -23,10 +23,10 @@ request.POST.get('roofbite','lack of roofbite')
  Error occured when I've passed request in return reverse()
 
 ## 2. Html form was not sending data
-I've closed <form> tag too early in code
-got error `CSRF verification failed. Request aborted. (Forbidden (403)) DJANGO`
+I've closed <form> tag too early in code and got error 
+`CSRF verification failed. Request aborted. (Forbidden (403)) DJANGO`
 
-## 3.  request.POST.get should heve () not {}
+## 3.  request.POST.get should have () not {}
 Proper: 
 ```py
  request.POST.get('questions_number')
