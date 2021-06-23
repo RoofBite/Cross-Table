@@ -25,5 +25,13 @@ def setup0(request):
         print("NIE działa")
         return render(request,'CrossTable/setup0.html')
 
-
+def result(request):
+    x=request.POST.get('quesion_answer_1')
+    print(x)
+    x=request.POST.get('quesion_answer_2')
+    print(x)
+    #if request.POST.get('quesion_answer_2'):
+    #    print('2 jest')
+    
+    return render(request,'CrossTable/result.html')
     

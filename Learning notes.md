@@ -14,8 +14,12 @@ request.POST.get has also default option:
 ``` py
 request.POST.get('roofbite','lack of roofbite')
 ```
-
-
+## 3. To do html input in loop 
+You should use tag 
+``` html
+<fieldset></fieldset>
+```
+inside form
 
 # Debuging
 

@@ -11,36 +11,36 @@
     {% block content %}
     
     
-    
+    <center>
     Answers for root question
     <form action="{% url 'CrossTable:result' %}" method="POST" id="form1">
     {% csrf_token %}
     {% for i in quesion_0_possible_answers_number %}
-   
+    <fieldset>
     
         
-    {{i}}. <input type="text" id="tentacles" name="quesion_0_answer_{{i}}"
-       min="1" max="10"/>
+    {{i}}. <input type="text" id="tentacles" name="quesion_0_answer_{{i}}"/>
 
 
     
 
-    
+    </fieldset>
     {% endfor %}
     <br>
     Answers for questions that will be croosed with root question
     {% for i in questions_number %}
+    <fieldset>
+        
+    {{i}}. <input type="text" id="tentacles" name="quesion_answer_{{i}}"/>
+
+</fieldset>
     
-        {% csrf_token %}
-    {{i}}. <input type="text" id="tentacles" name="quesion_answer_{{i}}"
-       min="1" max="10"/>
-
-
-    </form>
 
     
     {% endfor %}
     <button type="submit" form="form1" value="Submit">Submit</button>
+</form>
+</center>
     {% endblock %}
 </body>
 </html>
