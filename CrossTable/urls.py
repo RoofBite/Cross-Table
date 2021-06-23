@@ -12,6 +12,8 @@ urlpatterns = [
     ),
     path('setup1/<int:quesion_0_possible_answers_number>/<int:questions_number>/',
     views.setup1,name='setup1'
-    )
+    ),
+    path('result/',
+    views.result,name='result')
 
 ]

@@ -24,4 +24,6 @@ def setup0(request):
     else:
         print("NIE działa")
         return render(request,'CrossTable/setup0.html')
+
+
     
