@@ -35,3 +35,5 @@ Proper:
 ```py
  request.POST.get('questions_number')
  ```
+
+ ## 4. Remember about coomas between paths in urlpatterns!!

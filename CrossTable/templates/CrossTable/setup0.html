@@ -11,8 +11,9 @@
     {% block content %}
     
     
-    
-    Number of possible answers for root question 
+    <center>
+    Number of possible answers for root question
+    <br> 
 <form action="" method="POST" id="form1">
     {% csrf_token %}
     <input type="number" id="tentacles" name="quesion_0_possible_answers_number"
@@ -20,13 +21,14 @@
     
     <br>
     Number of questions to croos with root question
-    
+    <br>
     <input type="number" id="tentacles" name="questions_number"
        min="1" max="10"/>
 
 </form>
     
        <button type="submit" form="form1" value="Submit">Submit</button>
+    </center>
     {% endblock %}
 </body>
 </html>

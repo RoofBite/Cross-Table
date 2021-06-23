@@ -13,7 +13,7 @@
     
     <center>
     Answers for root question
-    <form action="{% url 'CrossTable:result' %}" method="POST" id="form1">
+    <form action="{% url 'CrossTable:result' quesion_0_possible_answers_number_int questions_number_int %}" method="POST" id="form1">
     {% csrf_token %}
     {% for i in quesion_0_possible_answers_number %}
     <fieldset>
