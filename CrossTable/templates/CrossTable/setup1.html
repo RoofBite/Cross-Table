@@ -12,9 +12,15 @@
     
     
     <center>
-    Answers for root question
+    
     <form action="{% url 'CrossTable:result' quesion_0_possible_answers_number_int questions_number_int %}" method="POST" id="form1">
     {% csrf_token %}
+    Root question column (paste from Excel)
+    <br>
+    <textarea placeholder="Paste root question column" id="tentacles" name="quesion_0_column"></textarea>
+    
+    <br>
+    Answers for root question
     {% for i in quesion_0_possible_answers_number %}
     <fieldset>
     
@@ -22,9 +28,15 @@
     {{i}}. <input type="text" id="tentacles" name="quesion_0_answer_{{i}}"/>
 
 
-    
-
     </fieldset>
+    {% endfor %}
+
+    Answers for questions columns (paste from Excel)
+    <br>
+    {% for i in questions_number %}
+
+    <textarea placeholder="Paste question {{i}} column" id="tentacles" name="quesion_{{i}}_column"></textarea>
+
     {% endfor %}
     <br>
     Answers for questions that will be croosed with root question
