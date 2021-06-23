@@ -47,11 +47,20 @@ def result(request,quesion_0_possible_answers_number_int,questions_number_int):
         temp_list.append(request.POST.get(f'quesion_answer_{i}'))
         answers_for_columns.append(temp_list)
     print(answers_for_columns)
-    x=request.POST.get('quesion_0_column').replace("\r\n","..")
-    print(x)
-    for x in range(60):
-        if '\n' in str(x):
-            print('jest')
+
+    columns=[]
+    
+   
+    columns.append((request.POST.get('quesion_0_column')).split("\r\n"))
+    
+    
+    for i in range(1,questions_number_int+1):
+        column=request.POST.get(f'quesion_{i}_column')
+        columns.append(column.split("\r\n"))
+
+    print(columns)
+
+    
 
 
 
