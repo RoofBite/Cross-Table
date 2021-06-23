@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from .calculate import calculate_cross_table
 
 # Create your views here.
 def index(request):
@@ -58,7 +59,9 @@ def result(request,quesion_0_possible_answers_number_int,questions_number_int):
         column=request.POST.get(f'quesion_{i}_column')
         columns.append(column.split("\r\n"))
 
-    print(columns)
+    calculate_cross_table(answers_for_columns,columns)
+
+    
 
     
 
