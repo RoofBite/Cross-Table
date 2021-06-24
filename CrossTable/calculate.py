@@ -43,7 +43,7 @@ def calculate_cross_table(answers_for_columns,columns):
     for column in output:
         all_answers_count.append(column)
 
-    print('all answers count for every column including root column',all_answers_count)
+    
 
 
     divided_all=[]
@@ -62,28 +62,33 @@ def calculate_cross_table(answers_for_columns,columns):
     #print(answers_for_columns[0])
     #print(divided_all)
     return divided_all
-'''
-    #Workbook is created
-    wb = Workbook()
-    sheet1 = wb.add_sheet('Sheet 1')
 
-
-    for index, answer in enumerate(answers_for_columns[0]):
-        sheet1.write(index+1,0,answer)
-        for index2, divided_for_column in enumerate(divided_all):
-            print(divided_for_column,'index2',index2,'index',index)
-            print(divided_for_column[index])
-            sheet1.write(index+1,index2+1,(divided_for_column[index]))
-
-
-
-    for column_id in range(len(columns[0:])):
-        default_question_name=f'Question {column_id}'
-        sheet1.write(0,column_id+1, default_question_name)
-
-
-    wb.save('CrossTable.xls')
-'''
+def format_output_for_excel(answers_for_columns,divided_all,questions_number_int,quesion_0_possible_answers_number_int):
+    output_string='\tALL ANSWERS FOR MAIN QUESTION\t'
+    x=[[0.5, 0.5], [None, None], [1.0, 0.0], [1.0, 0.0]]
+    for i in range(1,questions_number_int+1):
+        output_string+=f'Question {i}'
+        
+        if i==questions_number_int:
+            output_string+='\r\n'     
+        else:
+            output_string+='\t'
     
-    #print(answers_for_columns[0])
+    for i in range(quesion_0_possible_answers_number_int):
+        output_string+=f'Answer {i+1}'
+        for index in range(questions_number_int+1):
+            
+            output_string+=f'\t{divided_all[index][i]}'
+            
+            if index==questions_number_int:
+                
+                output_string+='\r\n'
+
+
+
+
+    print(output_string)
+    
+    return output_string
+
     

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .calculate import calculate_cross_table
+from .calculate import calculate_cross_table,format_output_for_excel
 
 # Create your views here.
 def index(request):
@@ -71,6 +71,8 @@ def result(request,quesion_0_possible_answers_number_int,questions_number_int):
         columns.append(column.split("\r\n"))
 
     divided_all=calculate_cross_table(answers_for_columns,columns)
+    output=format_output_for_excel(answers_for_columns,divided_all,questions_number_int,quesion_0_possible_answers_number_int)
+    divided_all=output
     context={'divided_all':divided_all}
     
     return render(request,'CrossTable/result.html',context)
