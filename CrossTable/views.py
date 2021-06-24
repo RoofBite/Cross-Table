@@ -59,15 +59,8 @@ def result(request,quesion_0_possible_answers_number_int,questions_number_int):
         column=request.POST.get(f'quesion_{i}_column')
         columns.append(column.split("\r\n"))
 
-    calculate_cross_table(answers_for_columns,columns)
-
+    divided_all=calculate_cross_table(answers_for_columns,columns)
+    context={'divided_all':divided_all}
     
-
-    
-
-
-
-    
-    
-    return render(request,'CrossTable/result.html')
+    return render(request,'CrossTable/result.html',context)
     

@@ -59,8 +59,8 @@ def calculate_cross_table(answers_for_columns,columns):
             else:
                 divided_for_column.append(None)
         divided_all.append(divided_for_column)
-    print(answers_for_columns[0])
-    print(divided_all)
+    #print(answers_for_columns[0])
+    #print(divided_all)
     return divided_all
 '''
     #Workbook is created

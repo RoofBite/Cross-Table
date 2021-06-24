@@ -8,6 +8,22 @@
     <title>{% block title %} Index page {% endblock %}</title>
 </head>
 <body>
-    {% block content %} {% endblock %}
+    {% block content %}
+    <center>
+        This webside enables you to cross answers from the survey (for example Google Froms) with each other. 
+        
+        It enable you to see percent of specific answers in all survey and percent of specific answers for certain grups for example people who answered: "Yes" in question number 3.
+     <br>
+     <br>
+        <a href="https://i.ibb.co/x2xCz82/Chart.png"><img src="https://i.ibb.co/x2xCz82/Chart.png" alt="Chart" width="500" 
+        height="250"></a>
+<br>
+<br>
+<button type="button">
+    <a href="{% url 'CrossTable:setup0' %}">Input your data</a>
+</button>
+        
+    </center>
+    {% endblock %}
 </body>
 </html>

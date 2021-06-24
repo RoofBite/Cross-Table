@@ -10,21 +10,9 @@
 <body>
     {% block content %}
     
+    {{divided_all}}
     
     
-    Answers for root question
-    {% for i in quesion_0_possible_answers_number %}
-   
-    <form action="" method="POST" id="form1">
-        {% csrf_token %}
-    {{i}}. <input type="text" id="tentacles" name="quesion_0_answer_{{i}}"
-       min="1" max="10"/>
-
-
-    </form>
-
-    
-    {% endfor %}
     <br>
     Answers for questions that will be croosed with root question
     {% for i in questions_number %}
