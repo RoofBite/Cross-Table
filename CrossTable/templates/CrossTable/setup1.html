@@ -17,13 +17,13 @@
     {% csrf_token %}
     <b><p style="color:rgb(34, 180, 70)"> Every column must have the same number of rows and none of rows can be empty </p></b>
     <br>
-    Root question column (paste from Excel)
+    Root (main) question column (paste from Excel)
     
     <fieldset>
     <textarea placeholder="Paste root question column" id="tentacles" name="quesion_0_column"></textarea>
 </fieldset>
     <br>
-    Answers for root question
+    Answers for root (main) question
     <fieldset>
     {% for i in quesion_0_possible_answers_number %}
     
@@ -46,7 +46,7 @@
     {% endfor %}
 </fieldset>
     <br>
-    Answers for questions that will be croosed with root question
+    Answers for questions that will be croosed with root (main) question
     <br>
     <fieldset>
     {% for i in questions_number %}
