@@ -56,7 +56,7 @@ def calculate_cross_table(answers_for_columns,columns):
             if sum(occurrences_column)!=0:
                 divided= (answer/sum(occurrences_column))*100
                 divided = "{:.2f}%".format(divided)
-                divided_for_column.append(divided)
+                divided_for_column.append(divided.replace('.',','))
             else:
                 divided_for_column.append(None)
         divided_all.append(divided_for_column)
@@ -65,7 +65,8 @@ def calculate_cross_table(answers_for_columns,columns):
     return divided_all
 
 def format_output_for_excel(answers_for_columns,divided_all,questions_number_int,quesion_0_possible_answers_number_int):
-    output_string='\tALL ANSWERS FOR MAIN QUESTION\t'
+    output_string='Answers column\tAll answers form main question\t'
+    print(answers_for_columns,'answers_for_columns')
     x=[[0.5, 0.5], [None, None], [1.0, 0.0], [1.0, 0.0]]
     for i in range(1,questions_number_int+1):
         output_string+=f'Question {i}'
@@ -76,7 +77,7 @@ def format_output_for_excel(answers_for_columns,divided_all,questions_number_int
             output_string+='\t'
     
     for i in range(quesion_0_possible_answers_number_int):
-        output_string+=f'Answer {i+1}'
+        output_string+=f'{answers_for_columns[0][i]}'
         for index in range(questions_number_int+1):
             
             output_string+=f'\t{divided_all[index][i]}'
