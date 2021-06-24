@@ -10,9 +10,12 @@
 <body>
     {% block content %}
     
-    {{divided_all}}
     
-    
+    <center>
+    <textarea placeholder="" id="tentacles" name="output" rows="20" cols="50">
+        {{divided_all}}
+    </textarea>
+</center>
     <br>
     Answers for questions that will be croosed with root question
     {% for i in questions_number %}

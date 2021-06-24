@@ -54,7 +54,8 @@ def calculate_cross_table(answers_for_columns,columns):
         divided_for_column=[]
         for answer in occurrences_column:
             if sum(occurrences_column)!=0:
-                divided= answer/sum(occurrences_column)
+                divided= (answer/sum(occurrences_column))*100
+                divided = "{:.2f}%".format(divided)
                 divided_for_column.append(divided)
             else:
                 divided_for_column.append(None)
