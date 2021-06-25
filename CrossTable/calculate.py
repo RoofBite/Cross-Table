@@ -66,7 +66,7 @@ def calculate_cross_table(answers_for_columns,columns):
 
 def format_output_for_excel(answers_for_columns,divided_all,questions_number_int,quesion_0_possible_answers_number_int):
     output_string='Answers column\tAll answers form main question\t'
-    print(answers_for_columns,'answers_for_columns')
+    
     x=[[0.5, 0.5], [None, None], [1.0, 0.0], [1.0, 0.0]]
     for i in range(1,questions_number_int+1):
         output_string+=f'Question {i}'
@@ -83,14 +83,10 @@ def format_output_for_excel(answers_for_columns,divided_all,questions_number_int
             output_string+=f'\t{divided_all[index][i]}'
             
             if index==questions_number_int:
-                
                 output_string+='\r\n'
 
 
 
-
-    print(output_string)
-    
     return output_string
 
     

@@ -27,7 +27,7 @@
     <br>
     Answers for root (main) question
     <fieldset>
-    {% for i in quesion_0_possible_answers_number %}
+    {% for i in quesion_0_possible_answers_number_list %}
     
     
         
@@ -41,7 +41,7 @@
     Answers for questions columns (paste from Excel)
     <br>
     <fieldset>
-    {% for i in questions_number %}
+    {% for i in questions_number_list %}
 
     <textarea placeholder="Paste question {{i}} column" id="tentacles" name="quesion_{{i}}_column"></textarea>
 
@@ -51,7 +51,7 @@
     Answers for questions that will be croosed with root (main) question
     <br>
     <fieldset>
-    {% for i in questions_number %}
+    {% for i in questions_number_list %}
     
         
     {{i}}. <input type="text" id="tentacles" name="quesion_answer_{{i}}"/>
